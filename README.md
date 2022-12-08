@@ -16,15 +16,15 @@ Run `npm run test` to execute the unit tests via [Karma].
 
 # Intro
 
-This project is using the 'TheCocktailDB' api in order to fetch & present a list with all the Cocktails available in the api.
+This project is using the 'TheCocktailDB' api in order to fetch & present a list with all the Cocktails available.
 Each Cocktail item is selectable and a new page will open presenting further details like ingredients, instructions etc.
 
 ## Functionalities
 
-Theme toggling is supported for light-dark theme switch at the top right of the header.
-Clicking on the logo will return to Home page.
-Pagination for the list results is added at the bottom of the page.
-At details page, instructions language can be changed to each one available.
+- Theme toggling is supported for light-dark theme switch at the top right of the header.
+-Clicking on the logo will return to Home page.
+-Pagination for the list results is added at the bottom of the page.
+- At details page, instructions language can be changed to each one available.
 
 ## Implementation
 
@@ -60,23 +60,26 @@ Each component has it's specific styling inside a scss file located in every com
 A global State service is instantiated and contains the data for Cocktails List & selected Cocktail Details.
 
 An interceptor is catching all the requests for presenting/hiding a loader and another interceptor catches all the network errors.
-The data fetching for each page is happening inside a corresponding resolver that firstly check if there are existing data in the State,
+The data fetching for each page is happening inside a corresponding resolver that firstly checks if there are existing data in the State,
 before sending an api request.
 
 The data fetching of All the Cocktails available was not possible in a single-call since the api does not support this, so a workaround was used,
 taking advantage the api endpoint for fetching all cocktails by the starting letter, the resolver is using a forkjoin to fetch multiple results for
-each letter of the alphabet and the a random sorting is applied on the unified-flattened result.
+each letter of the alphabet and then a random sorting is applied on the unified-flattened result.
 
 Since the app gets all available Cocktails at the start of the App, all the filtering is taking place in the FE and no further call 
 is done to the api. Even when a single Cocktail Details page is opened from the list, the data are set in State. If a Cocktail Details page
 is visited directly, then and only then the app will call the api for the details. The same applies if we need to go back to Cocktails List page.
 
+The server data are mapped to cleaner, more readable & more usable models.
+
 ### Performance
 
-In terms of performance, the first and foremost was the usage of lazy-loading for the pages.
+In terms of performance, the first and foremost was the usage of lazy-loading modules for the pages.
 
-The main concern of this app was the heavy network requests when loading the list for the first time.
+Then the main concern of this app was the heavy network requests when loading the list for the first time along with the number of images to render.
 - As a start, the usage of a forkjoin for the requests, makes them run in parallel.
 - Then the new NgOptimizedImage directive was used to handle the loading of all these images and even further a pagination was used,
 so that the number of images to load when scrolling are minimized.
+- All the images urls where adapted to load the smallest possible size (thumbnail 100x100).
 - The usage of state in order to reduce extra calls to the api since the data are already available in the FE.
