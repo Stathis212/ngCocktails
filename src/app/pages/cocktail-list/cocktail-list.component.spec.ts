@@ -67,7 +67,7 @@ describe('CocktailListComponent', () => {
     expect(expectToHaveAllCocktails).toBeTruthy();
     expect(expectCategoriesToIncludeDefault).toBeTruthy();
     expect(expectPaginatedCocktailsToHaveValues).toBeTruthy();
-    expect(component.filteredCocktails.length).toEqual(0);
+    expect(component.filteredCocktails.length).toEqual(4);
   });
 
   it('should search cocktails', () => {
