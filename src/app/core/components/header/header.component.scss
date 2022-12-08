@@ -1,0 +1,45 @@
+.header-content {
+  position: relative;
+  width: 80%;
+  max-width: 1280px;
+  height: var(--xxxl-space);
+  margin: auto;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+
+    span {
+      color: var(--header-text-color);
+      display: flex;
+      align-items: center;
+      margin-left: var(--l-space);
+      font-size: var(--font-xxl);
+    }
+  }
+
+  .theme_switch {
+    width: 20%;
+    color: var(--header-text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+
+    i {
+      font-size: var(--font-xxxl);
+      padding: 0 var(--m-space);
+    }
+
+    span {
+      line-height: var(--font-xxxl);
+    }
+
+    &:hover {
+      color: var(--btn-hover-bg-color)
+    }
+  }
+
+}

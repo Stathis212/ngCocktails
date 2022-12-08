@@ -1,0 +1,18 @@
+.footer-content {
+  position: relative;
+  width: 80%;
+  max-width: 1280px;
+  height: var(--xxl-space);
+  margin: auto;
+  padding-top: var(--l-space);
+  padding-bottom: var(--l-space);
+
+  p {
+    display: block;
+    color: var(--footer-text-color);
+  }
+
+  a {
+    color: var(--footer-text-color);
+  }
+}

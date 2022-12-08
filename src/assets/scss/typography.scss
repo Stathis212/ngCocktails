@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap");
+
+:root {
+  --font-family: 'Poppins', 'Arial', sans-serif;
+  --font-xs: 12px;
+  --font-s: 13px;
+  --font-m: 14px;
+  --font-regular: 16px;
+  --font-l: 18px;
+  --font-xl: 20px;
+  --font-xxl: 24px;
+  --font-xxxl: 32px;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semibold: 500;
+  --font-bold: 700;
+
+  --line-height: 1.5em;
+  --input-height: 40px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-regular);
+  line-height: var(--line-height);
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+strong,
+b {
+  font-weight: var(--font-bold);
+}
+
+h1 {
+  font-size: var(--font-xxl);
+  line-height: var(--line-height);
+}
+h2 {
+  font-size: var(--font-xl);
+  line-height: var(--line-height);
+}
+h3 {
+  font-size: var(--font-l);
+  line-height: var(--line-height);
+}

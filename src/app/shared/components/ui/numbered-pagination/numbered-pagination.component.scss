@@ -1,0 +1,40 @@
+@function color($color-name) {
+  @return var(#{$color-name});
+}
+
+.numbered-paginator {
+  display: flex;
+  justify-content: center;
+  margin: var(--xxl-space) 0;
+
+  ol {
+    list-style: none;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .paginator-container {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    li {
+      color: color(--text-color);
+      text-align: center;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+
+      &.paginator-number {
+        width: 2rem;
+        padding: 0.25rem 0;
+      }
+
+      &.active {
+        color: color(--bg-color);
+        background-color: color(--btn-bg-color);
+      }
+    }
+  }
+}

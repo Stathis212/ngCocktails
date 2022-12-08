@@ -1,0 +1,24 @@
+<ng-container *ngIf="cocktail">
+  <div class="card">
+    <img [ngSrc]="cocktail.thumbnail || 'assets/images/image_na.png'" class="card_image" alt="" width="300" height="300"/>
+    <div class="card_overlay">
+      <div class="card_header">
+        <svg class="card_arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+        <img *ngIf="cocktail.hasAlcohol" class="card_thumb" [src]="cocktail.ingredientIcon(0)" alt="" />
+        <img *ngIf="!cocktail.hasAlcohol" class="card_thumb" src="assets/images/alcohol-free.png" alt="" />
+        <div class="card_header-text">
+          <h3 class="card_title">{{cocktail.name}}</h3>
+          <span class="card_status">{{cocktail.category}}</span>
+        </div>
+      </div>
+      <p class="card_description">
+        <span *ngIf="cocktail.tags?.length" class="card_tagline">
+          <strong>Tags:&nbsp;</strong>
+          <span *ngFor="let tag of cocktail.tags; let i = index">
+            {{tag}}<ng-container *ngIf="cocktail.tags.length !== i + 1">,&nbsp;</ng-container>
+          </span>
+        </span>
+      </p>
+    </div>
+  </div>
+</ng-container>

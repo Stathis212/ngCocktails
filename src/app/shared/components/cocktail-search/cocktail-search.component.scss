@@ -1,0 +1,14 @@
+.search-filters {
+  display: flex;
+  justify-content: space-between;
+
+  .text-search {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .search-filters {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

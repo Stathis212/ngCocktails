@@ -1,0 +1,20 @@
+<div *ngIf="totalCount && maxPages > 1" class="numbered-paginator">
+  <ol class="paginator-container">
+    <ng-container *ngIf="index > 1">
+      <li (click)="navigateToPage(1)">First page</li>
+      <li (click)="navigateToPage(index - 1)">Previous page</li>
+    </ng-container>
+    <li
+      *ngFor="let page of pagination.pages; trackBy: trackByFn"
+      class="paginator-number"
+      [class.active]="page === pagination.index"
+      (click)="navigateToPage(page)"
+    >
+      {{ page }}
+    </li>
+    <ng-container *ngIf="index !== maxPages">
+      <li *ngIf="index !== maxPages" (click)="navigateToPage(index + 1)">Next page</li>
+      <li *ngIf="index !== maxPages" (click)="navigateToPage(maxPages)">Last page</li>
+    </ng-container>
+  </ol>
+</div>

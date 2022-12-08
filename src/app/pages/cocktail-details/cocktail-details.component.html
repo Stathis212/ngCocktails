@@ -1,0 +1,45 @@
+<section *ngIf="cocktail" class="cocktail">
+	<div class="cocktail_photo">
+		<div class="photo_container">
+			<div class="photo_main">
+				<img [src]="cocktail.thumbnail" alt="green apple slice">
+			</div>
+			<div class="ingredients_album">
+				<ul>
+          <li *ngFor="let ingredient of cocktail.ingredients">
+            <img [src]="'https://www.thecocktaildb.com/images/ingredients/' + ingredient + '-Small.png'" alt="{{ingredient}}">
+            <div>{{ingredient}}</div>
+          </li>
+				</ul>
+			</div>
+      <!-- <button class="buy--btn">RETURN TO LIST</button> -->
+		</div>
+	</div>
+	<div class="cocktail_info">
+		<div class="title">
+			<h1>{{cocktail.name}}</h1>
+			<span *ngIf="cocktail.tags?.length">TAGS: {{cocktail.tags.join(', ')}}</span>
+		</div>
+		<div class="glass_type">
+			Glass Type: <span>{{cocktail.glassType}}</span>
+		</div>
+    <div class="has_alcohol">
+			Has Alcohol: <span>{{cocktail.hasAlcohol ? 'Yes' : 'No'}}</span>
+		</div>
+    <div class="description">
+			<h3>INGREDIENTS</h3>
+			<ul>
+				<li *ngFor="let ingredient of cocktail.ingredients">{{ingredient}}</li>
+			</ul>
+		</div>
+		<div class="instructions">
+			<h3>{{instructionsLanguage | instructionsLang}}</h3>
+			<ul>
+				<li *ngFor="let instruction of cocktail.instructions" [class.active]="instruction.lang === instructionsLanguage"><img [src]="instruction.icon" width="64" height="48" alt=" England" (click)="setActiveLanguage(instruction.lang)"></li>
+			</ul>
+		</div>
+		<div class="description">
+			<span>{{activeInstructions?.text}}</span>
+		</div>
+	</div>
+</section>

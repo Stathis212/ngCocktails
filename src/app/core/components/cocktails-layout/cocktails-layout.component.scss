@@ -1,0 +1,32 @@
+.layout {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--header-bg-color);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+  z-index: var(--z-pop);
+  transition: .2s ease-in-out;
+}
+
+.route-container {
+  max-width: 1280px;
+  min-height: calc(100vh - 360px);
+  margin: auto;
+  margin-top: var(--xxxl-space);
+  padding-top: var(--xxl-space)
+}
+
+footer {
+  width: 100%;
+  background: var(--footer-bg-color);
+  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: var(--z-pop);
+  transition: .2s ease-in-out;
+}

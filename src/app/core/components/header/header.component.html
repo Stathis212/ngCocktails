@@ -1,0 +1,18 @@
+<div class="header-content">
+  <div class="logo" [routerLink]="['/']">
+    <a [routerLink]="['/']">
+      <img *ngIf="activeTheme === ''" src="assets/images/logo-dark.png" width="200" height="200" />
+      <img *ngIf="activeTheme !== ''" src="assets/images/logo-light.png" width="200" height="200" />
+    </a>
+    <span>A Majestic Journey into Cocktails & Spirits!</span>
+  </div>
+  <div class="theme_switch" (click)="switchTheme()">
+    <i class="material-symbols-outlined">
+      {{ activeTheme === '' ? 'dark_mode' : 'light_mode' }}
+    </i>
+    <span>
+      {{ activeTheme === '' ? 'Dark Mode' : 'Light Mode' }}
+    </span>
+  </div>
+
+</div>

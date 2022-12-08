@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/colors.scss';
+@import './assets/scss/typography.scss';
+@import './assets/scss/icon-font.scss';
+@import './assets/scss/layout.scss';
+
+body {
+  background: var(--bg-color);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: .2s ease-in-out;
+}
+
+h1, p {
+  color: var(--text-color);
+}
+
+h1 {
+  font-weight: var(--font-regular);
+}
+
+button {
+  padding: var(--m-space);
+  border: none;
+  border-radius: 2px;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg-color);
+  transition: .2s ease-in-out;
+}

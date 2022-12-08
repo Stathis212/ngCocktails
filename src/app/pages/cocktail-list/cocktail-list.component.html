@@ -1,0 +1,18 @@
+<h1>List of Menu Cocktails</h1>
+<app-cocktail-search
+  [categories]="categories"
+  (searchFiltersEmitter)="searchCocktails($event)"
+></app-cocktail-search>
+<ul class="cards">
+  <li app-cocktail-item
+    *ngFor="let cocktail of paginatedCocktails[page - 1]"
+    [cocktail]="cocktail"
+    (click)="selectCocktail(cocktail.id)">
+  </li>
+</ul>
+<app-numbered-pagination
+  [index]="page"
+  [totalCount]="filteredCocktails.length"
+  [pageSize]="pageCount"
+  (page)="setPage($event)"
+></app-numbered-pagination>

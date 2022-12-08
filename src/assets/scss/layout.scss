@@ -1,0 +1,66 @@
+:root {
+  /* ===================== SPACING ======================= */
+  --no-space: 0px;
+  --xs-space: 2.5px;
+  --s-space: 5px;
+  --m-space: 10px;
+  --l-space: 20px;
+  --xl-space: 40px;
+  --xxl-space: 80px;
+  --xxxl-space: 160px;
+  --max-space: 320px;
+
+/* ===================== Z-INDEXES ===================== */
+  --z-bedrock: -1;
+  --z-bottom: 0;
+  --z-base: 10;
+  --z-pop: 100;
+  --z-overlay: 200;
+  --z-topmost: 400;
+
+  --dropdown-icon: url("/assets/images/icons/chevron_down.png");
+}
+
+.theme-dark {
+  --dropdown-icon: url("/assets/images/icons/chevron_down_white.png");
+}
+
+input[type=text] {
+  border-top: 1px solid var(--input-border-color);
+  outline: 1px solid var(--input-border-color);
+  padding: 0px var(--m-space) 0px var(--m-space);
+  justify-content: space-between;
+
+  &:hover {
+    outline: 1px solid fade_out(#D5A021, 0.5);
+  }
+}
+
+input[type=text],
+input[type=radio] {
+  height: var(--input-height);
+  line-height: var(--input-line-height);
+  border: none;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  font-size: var(--font-m);
+  font-weight: var(--font-bold);
+  margin-right: var(--m-space);
+  margin-top: 0;
+}
+
+.radio-fieldset {
+  display: flex;
+  height: var(--input-height);
+}
+
+label {
+  color: var(--text-color);
+  line-height: var(--input-height);
+  margin-right: var(--l-space);
+}
+
+.dropdown-button {
+  background-image: var(--dropdown-icon);
+  background-size: 20px;
+}

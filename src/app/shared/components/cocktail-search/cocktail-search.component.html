@@ -1,0 +1,15 @@
+<form [formGroup]="filterForm" class="search-filters">
+  <div class="text-search">
+    <!-- <div class="custom-control radio-fieldset">
+      <input id="name" type="radio" class="custom-control-input" value="s" name="type" formControlName="type">
+      <label class="custom-control-label" for="name">Name</label>
+   </div>
+   <div class="custom-control radio-fieldset">
+      <input id="ingredient" type="radio" class="custom-control-input" value="i" name="type" formControlName="type">
+      <label class="custom-control-label" for="ingredient">Ingredient</label>
+   </div> -->
+   <input type="text" placeholder="Search name..." value="" formControlName="name">
+  </div>
+
+ <div class="category-search" app-select-field [title]="'Category'" [options]="options" (currentValueChange)="filterByCategory($event)"></div>
+</form>
